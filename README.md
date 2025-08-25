@@ -6,15 +6,23 @@
 ├── wiremock-jre8-standalone-2.35.0
 │   ├── custom-transformer.jar
 │   ├── __files
+│   │   └── users.json
 │   ├── mappings
+│   │   └── checkAuthorization.json
 │   ├── run.sh
 │   ├── wiremock-jre8-standalone-2.35.0.jar
 └── wiremock-standalone-3.4.2
     ├── __files
+    │   └── checkXML.xml
     ├── mappings
+    │   ├── checkJson.json
+    │   ├── checkURL.json
+    │   ├── checkXML.json
+    │   └── firstMock.json
     ├── run.sh
     ├── wiremock-body-transformer-1.1.6.jar
     └── wiremock-standalone-3.4.2.jar
+
 ```
 
 ## Описание версий
