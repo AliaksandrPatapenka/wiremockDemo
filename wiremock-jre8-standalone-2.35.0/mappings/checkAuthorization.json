@@ -20,6 +20,5 @@
 			"median": 200,
 			"sigma": 0.1
 		}
-    "transformers": ["custom-auth-transformer"]
   }
 }
