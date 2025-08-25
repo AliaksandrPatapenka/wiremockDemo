@@ -1,0 +1,27 @@
+{
+	"request": {
+		"method": "GET",
+		"urlPath": "/checkURL",
+		"queryParameters": {
+			"p1": {
+				"matches": ".*"
+			},
+			"p2": {
+				"matches": ".*"
+			}
+		}
+	},
+	"response": {
+		"status": 200,
+		"body": "p1 = $(p1), p2 = $(p2)",
+		"headers": {
+			"Content-Type": "text/html"
+		},
+		"delayDistribution": {
+			"type": "lognormal",
+			"median": 200,
+			"sigma": 0.1
+		},
+	"transformers": ["body-transformer"] 
+	}
+}

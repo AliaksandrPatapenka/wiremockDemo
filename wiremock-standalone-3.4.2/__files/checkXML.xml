@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<order>
+    <orderId>ORD-2024-001</orderId>
+    <customerId>CUST-123</customerId>
+    <date>2024-01-15</date>
+    <totalAmount>156.75</totalAmount>
+    <currency>USD</currency>
+    <items>
+        <item>
+            <productId>PROD-001</productId>
+            <name>Product A</name>
+            <quantity>2</quantity>
+            <price>45.99</price>
+        </item>
+        <item>
+            <productId>PROD-002</productId>
+            <name>Product B</name>
+            <quantity>1</quantity>
+            <price>64.77</price>
+        </item>
+    </items>
+    <status>completed</status>
+</order>

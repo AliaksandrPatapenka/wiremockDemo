@@ -1,0 +1,18 @@
+{
+	"request": {
+		"method": "GET",
+        "urlPattern": "/service/firstMock/[a-zA-Z]+/[0-9]{4}/[a-zA-Z]+/query\\?p1=[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
+    },
+	"response": {
+		"status": 200,
+		"body": "My test 1.0",
+		"headers": {
+			"Content-Type": "text/html"
+		},
+		"delayDistribution": {
+			"type": "lognormal",
+			"median": 200,
+			"sigma": 0.1
+		}
+	}
+}
