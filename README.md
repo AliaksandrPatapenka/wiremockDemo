@@ -129,7 +129,7 @@ cd wiremock-jre8-standalone-2.35.0
 
 **Пример запроса:**
 ```bash
-curl -X POST http://localhost:8080/api/checkAuthorization \
+curl -X POST http://localhost:8080/checkAuthorization \
   -H "Content-Type: application/json" \
   -d '{
     "email": "test1@test.ru",
@@ -141,7 +141,7 @@ curl -X POST http://localhost:8080/api/checkAuthorization \
 
 ### 1. firstMock
 
-Обрабатывает параметры, переданные через URL:
+С помощью **urlPattern** обрабатывает параметры, переданные через URL:
 - Фамилия
 - Числовой id
 - Имя
@@ -149,13 +149,13 @@ curl -X POST http://localhost:8080/api/checkAuthorization \
 
 **Пример запроса:**
 ```bash
-curl -X GET "http://localhost:8080/api/service/firstMock/Test/0001/Aleks/query?p1=b0d4ce5d-2757-4699-948c-cfa72ba94f86" \
+curl -X GET "http://localhost:8080/service/firstMock/Test/0001/Aleks/query?p1=b0d4ce5d-2757-4699-948c-cfa72ba94f86" \
   -H "Content-Type: text/html"
 ```
 
 ### 2. checkURL
 
-Обрабатывает параметры `p1` и `p2`, переданные в URL. Ответ возвращает значения переданных параметров.
+С помощью **queryParameters** обрабатывает параметры `p1` и `p2`, переданные в URL. Ответ возвращает значения переданных параметров.
 
 **Формат ответа:**
 ```
@@ -164,23 +164,23 @@ p1 = [значение p1], p2 = [значение p2]
 
 **Пример запроса:**
 ```bash
-curl -X GET "http://localhost:8080/api/checkURL?p1=param1&p2=param2" \
+curl -X GET "http://localhost:8080/checkURL?p1=param1&p2=param2" \
   -H "Content-Type: text/html"
 ```
 
 ### 3. checkXML
 
-Сравнивает тело запроса с шаблоном. При совпадении возвращает XML из файла `checkXML.xml`.
+С помощью **bodyPatterns**  обрабатывает данные в XML. При совпадении возвращает XML из файла `checkXML.xml`.
 
 **Пример запроса:**
 ```bash
-curl -X POST http://localhost:8080/api/checkXML \
+curl -X POST http://localhost:8080/checkXML \
   -H "Content-Type: text/xml; charset=utf-8"
 ```
 
 ### 4. checkJson
 
-Обрабатывает JSON из тела запроса. При совпадении с шаблоном возвращает данные из запроса + добавляется третьий параметр в виде случайного числа.
+С помощью **bodyPatterns** обрабатывает JSON из тела запроса. При совпадении с шаблоном возвращает данные из запроса + добавляется третьий параметр в виде случайного числа.
 
 **Пример ответа:**
 ```json
@@ -193,7 +193,7 @@ curl -X POST http://localhost:8080/api/checkXML \
 
 **Пример запроса:**
 ```bash
-curl -X POST http://localhost:8080/api/checkJson \
+curl -X POST http://localhost:8080/checkJson \
   -H "Content-Type: application/json" \
   -d '{
     "userId": "001",
