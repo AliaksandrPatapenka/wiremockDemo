@@ -125,7 +125,7 @@ cd wiremock-jre8-standalone-2.35.0
 -   `test1@test.ru` / `password1`
 -   `test2@test.ru` / `password2`
 -   `test3@test.ru` / `password3`
--   
+
 Список пользователей и паролей находится в файле `users.json`. Список масштабируемый.
 
 **Пример запроса:**
