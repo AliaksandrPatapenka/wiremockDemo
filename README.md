@@ -41,10 +41,16 @@
 
 ```bash
 # Запуск версии 2.35.0
-cd wiremock-jre8-standalone-2.35.0
-./run.sh
 
-# Запуск версии 3.4.2  
+cd wiremock-jre8-standalone-2.35.0
+
+./run.sh
+```
+
+```bash
+# Запуск версии 3.4.2
+  
 cd wiremock-standalone-3.4.2
+
 ./run.sh
 ```
