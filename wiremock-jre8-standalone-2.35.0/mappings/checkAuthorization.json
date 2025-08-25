@@ -13,6 +13,11 @@
     "headers": {
       "Content-Type": "application/json"
     },
-    "transformers": ["custom-auth-transformer"]
+    "transformers": ["custom-auth-transformer"],
+	"delayDistribution": {
+			"type": "lognormal",
+			"median": 200,
+			"sigma": 0.1
+		}
   }
 }
