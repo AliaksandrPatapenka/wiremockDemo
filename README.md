@@ -85,6 +85,119 @@ cd wiremock-jre8-standalone-2.35.0
 - **Логи сохраняются в**: wiremock.log
 - **Расширения**: включены кастомные трансформеры
 
-## Кейсы для версии 2.35.0
-1. **checkAuthorization**
-- 
+  # Тестовые кейсы для API
+
+## Версия 2.35.0
+
+### 1. checkAuthorization
+
+Тест обрабатывает данные из запроса (email и пароль).
+
+**Условия и ответы:**
+
+-   **При успехе (Status 200):**
+    ```json
+    {
+        "status": "success",
+        "userId": "id_пользователя",
+        "sessionCookie": "sessionCookie.value"
+    }
+    ```
+
+-   **Если пользователь не найден (Status 404):**
+    ```json
+    {
+        "status": "error",
+        "message": "Not Found"
+    }
+    ```
+
+-   **Если неверный пароль (Status 401):**
+    ```json
+    {
+        "status": "error",
+        "message": "Unauthorized"
+    }
+    ```
+
+**Тестовые учетные записи (хранятся в `users.json`):**
+-   `test1@test.ru` / `password1`
+-   `test2@test.ru` / `password2`
+-   `test3@test.ru` / `password3`
+-   
+  Список пользователей и паролей находится в файле users.json. Список масштабируемый.  
+
+**Пример запроса:**
+```bash
+curl -X POST http://localhost:8080/api/checkAuthorization \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "test1@test.ru",
+    "password": "password1"
+  }'
+```
+
+## Версия 3.4.2
+
+### 1. firstMock
+
+Обрабатывает параметры, переданные через URL:
+- Фамилия
+- Числовой id
+- Имя
+- id в формате GUID
+
+**Пример запроса:**
+```bash
+curl -X GET "http://localhost:8080/api/service/firstMock/Test/0001/Aleks/query?p1=b0d4ce5d-2757-4699-948c-cfa72ba94f86" \
+  -H "Content-Type: text/html"
+```
+
+### 2. checkURL
+
+Обрабатывает параметры `p1` и `p2`, переданные в URL. Ответ возвращает значения переданных параметров.
+
+**Формат ответа:**
+```
+p1 = [значение p1], p2 = [значение p2]
+```
+
+**Пример запроса:**
+```bash
+curl -X GET "http://localhost:8080/api/checkURL?p1=param1&p2=param2" \
+  -H "Content-Type: text/html"
+```
+
+### 3. checkXML
+
+Сравнивает тело запроса с шаблоном. При совпадении возвращает XML из файла `checkXML.xml`.
+
+**Пример запроса:**
+```bash
+curl -X POST http://localhost:8080/api/checkXML \
+  -H "Content-Type: text/xml; charset=utf-8"
+```
+
+### 4. checkJson
+
+Обрабатывает JSON из тела запроса. При совпадении с шаблоном возвращает данные из запроса + добавляется третьий параметр в виде случайного числа.
+
+**Пример ответа:**
+```json
+{
+    "userId": "001",
+    "userName": "myName",
+    "randomInteger": "58896360"
+}
+```
+
+**Пример запроса:**
+```bash
+curl -X POST http://localhost:8080/api/checkJson \
+  -H "Content-Type: application/json" \
+  -d '{
+    "userId": "001",
+    "userName": "myName"
+  }'
+```
+
