@@ -1,6 +1,5 @@
 # wiremockDemo
 =======
-# WireMock Demo Project
 
 Структура проекта:
 
@@ -202,5 +201,3 @@ curl -X POST http://localhost:8080/checkJson \
     "userName": "myName"
   }'
 ```
-
->>>>>>> 13f3175428c83979e09134727a212a2dca1e71d0
