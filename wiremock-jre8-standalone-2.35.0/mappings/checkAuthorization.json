@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/checkAuthorization",
+    "bodyPatterns": [
+      {"matchesJsonPath": "$.[?(@.email)]"},
+      {"matchesJsonPath": "$.[?(@.password)]"}
+    ]
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"status\": \"success\", \"userId\": \"{{userId}}\", \"sessionCookie\": \"{{sessionCookie}}\"}",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "transformers": ["custom-auth-transformer"]
+  }
+}

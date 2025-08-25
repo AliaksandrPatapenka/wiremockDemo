@@ -1,0 +1,28 @@
+[{
+	"id": 1,
+	"email": "test1@test.ru",
+	"password": "password1",
+	"sessionCookie": {
+		"name": "session_id",
+		"value": "a1b2c3d4e5f6g7h8i111"
+	}
+},
+{
+	"id": 2,
+	"email": "test2@test.ru",
+	"password": "password2",
+	"sessionCookie": {
+		"name": "session_id",
+		"value": "a1b2c3d4e5f6g7h8i222"
+	}
+},
+{
+	"id": 3,
+	"email": "test3@test.ru",
+	"password": "password3",
+	"sessionCookie": {
+		"name": "session_id",
+		"value": "a1b2c3d4e5f6g7h8i333"
+	}
+}
+]
