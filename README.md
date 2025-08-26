@@ -1,5 +1,5 @@
 # wiremockDemo
-=======
+
 
 Структура проекта:
 
@@ -133,9 +133,9 @@ cd wiremock-jre8-standalone-2.35.0
 curl -X POST http://localhost:8080/checkAuthorization \
   -H "Content-Type: application/json" \
   -d '{
-    "email": "test1@test.ru",
-    "password": "password1"
-  }'
+       "email": "test1@test.ru",
+       "password": "password1"
+      }'
 ```
 
 ## Версия 3.4.2
@@ -151,7 +151,7 @@ curl -X POST http://localhost:8080/checkAuthorization \
 **Пример запроса:**
 ```bash
 curl -X GET "http://localhost:8080/service/firstMock/Test/0001/Aleks/query?p1=b0d4ce5d-2757-4699-948c-cfa72ba94f86" \
-  -H "Content-Type: text/html"
+     -H "Content-Type: text/html"
 ```
 
 ### 2. checkURL
@@ -166,7 +166,7 @@ p1 = [значение p1], p2 = [значение p2]
 **Пример запроса:**
 ```bash
 curl -X GET "http://localhost:8080/checkURL?p1=param1&p2=param2" \
-  -H "Content-Type: text/html"
+     -H "Content-Type: text/html"
 ```
 
 ### 3. checkXML
@@ -176,12 +176,12 @@ curl -X GET "http://localhost:8080/checkURL?p1=param1&p2=param2" \
 **Пример запроса:**
 ```bash
 curl -X POST http://localhost:8080/checkXML \
-  -H "Content-Type: text/xml; charset=utf-8"
+     -H "Content-Type: text/xml; charset=utf-8"
 ```
 
 ### 4. checkJson
 
-С помощью **bodyPatterns** обрабатывает JSON из тела запроса. При совпадении с шаблоном возвращает данные из запроса + добавляется третьий параметр в виде случайного числа.
+С помощью **bodyPatterns** обрабатывает JSON из тела запроса. При совпадении с шаблоном возвращает данные из запроса + добавляется третий параметр в виде случайного числа.
 
 **Пример ответа:**
 ```json
@@ -197,7 +197,7 @@ curl -X POST http://localhost:8080/checkXML \
 curl -X POST http://localhost:8080/checkJson \
   -H "Content-Type: application/json" \
   -d '{
-    "userId": "001",
-    "userName": "myName"
-  }'
+       "userId": "001",
+       "userName": "myName"
+      }'
 ```
